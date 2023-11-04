@@ -1,0 +1,6 @@
+<div class="w-full flex flex-col space-y-3 items-center justify-center mb-4">
+  <h3 class="text-xl uppercase font-semibold">Buscar por región</h3>
+  <shared-search-input class="w-11/12 md:w-1/4" (onValue)="searchByRegion( $event )" [placeholder]="placeholder"></shared-search-input>
+</div>
+
+<countries-country-table [countries]="countries" *ngIf="countries.length > 0"></countries-country-table>

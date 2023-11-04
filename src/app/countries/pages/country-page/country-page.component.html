@@ -1,0 +1,19 @@
+<ng-template #loading>
+  <div>
+    <p class="text-center text-lg uppercase">Espere por favor</p>
+  </div>
+</ng-template>
+
+<countries-country-table [countries]="country" *ngIf="country.length > 0; else loading"></countries-country-table>
+
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-8 mx-auto md:mx-0">
+  <div class="p-5" *ngIf="country.length > 0; else loading">
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Nombre oficial: {{ country[0].name.official }}</p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Nombre: {{ country[0].name.common }}</p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Capital: {{ country[0].capital }}</p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Idioma: {{ country[0].languages.spa }}</p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Población: {{ country[0].population | number }}</p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Continente: {{ country[0].continents }}</p>
+  </div>
+</div>
+

@@ -1,0 +1,49 @@
+
+<div class="relative overflow-x-auto">
+  <table class="w-full text-sm text-left text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+          <tr>
+              <th scope="col" class="px-6 py-3">
+                  País
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Capital
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Población
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Icono
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Bandera
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Opción
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="bg-white border-b" *ngFor="let country of countries">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                {{ country.name.official }}
+              </th>
+              <td class="px-6 py-4">
+                {{ country.capital }}
+              </td>
+              <td class="px-6 py-4">
+                {{ country.population | number }}
+              </td>
+              <td class="px-6 py-4">
+                {{ country.flag }}
+              </td>
+              <td class="px-6 py-4">
+                <img class="w-8" [src]="country.flags.svg">
+              </td>
+              <td class="px-6 py-4">
+                <a [routerLink]="['/countries/byCode', country.cca3]">Info</a>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
