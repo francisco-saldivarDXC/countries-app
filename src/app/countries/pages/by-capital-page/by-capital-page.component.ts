@@ -9,6 +9,7 @@ import { Country } from '../../services/interfaces/country-interface';
   ]
 })
 export class ByCapitalPageComponent {
+  public showLoader: boolean = false;
   public placeholder: string = "Buscar país por capital";
   public countries: Country[] = [];
 
@@ -17,8 +18,10 @@ export class ByCapitalPageComponent {
   }
 
   public searchByCapital(term: string): void {
+    this.showLoader = true;
     this.countriesService.getCountriesByCapital(term).subscribe(countries => {
-      this.countries = countries
+      this.countries = countries;
+      this.showLoader = false;
     });
   }
 }

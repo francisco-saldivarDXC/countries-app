@@ -1,6 +1,7 @@
 <div class="w-full flex flex-col space-y-3 items-center justify-center mb-4">
   <h3 class="text-xl uppercase font-semibold">Buscar por país</h3>
-  <shared-search-input class="w-11/12 md:w-1/4" (onValue)="searchByCountry( $event )" [placeholder]="placeholder"></shared-search-input>
+  <shared-search-input (onDebouncer)="searchByCountry( $event )" class="w-11/12 md:w-1/4" (onValue)="searchByCountry( $event )" [placeholder]="placeholder"></shared-search-input>
+  <shared-loading-spinner *ngIf="showLoader"></shared-loading-spinner>
 </div>
 
 <countries-country-table *ngIf="countries.length > 0" [countries]="countries"></countries-country-table>

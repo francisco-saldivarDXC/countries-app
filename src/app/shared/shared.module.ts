@@ -6,6 +6,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { RouterModule } from '@angular/router';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     AboutPageComponent,
     NavBarComponent,
     ContactPageComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { RouterModule } from '@angular/router';
     AboutPageComponent,
     ContactPageComponent,
     NavBarComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    LoadingSpinnerComponent
   ]
 })
 export class SharedModule { }

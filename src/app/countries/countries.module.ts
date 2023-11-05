@@ -9,6 +9,7 @@ import { CountriesRoutingModule } from './countries-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CountryTableComponent } from './components/country-table/country-table.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +26,8 @@ import { CountryTableComponent } from './components/country-table/country-table.
     CommonModule,
     CountriesRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   exports: [
     PruebaComponent
